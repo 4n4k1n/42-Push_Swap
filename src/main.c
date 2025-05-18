@@ -14,19 +14,15 @@
 
 int	main(int ac, char **av)
 {
-	t_stacks	stacks;
-	t_llist		*temp = NULL;
-
 	// printf("ptr = %p\n\n", temp);
-	if (!parsing(ac, av, &stacks))
+	if (!parsing(ac, av))
 		return (1);
-	temp = stacks.stack_a->head;
 	// printf("ptr = %p\n\n", temp);
 	// while (temp->next)
 	// {
 	// 	printf("num = %lli\n", temp->num);
 	// 	temp = temp->next;
 	// }
-	free_nodes(stacks.stack_a->head);
+	free_nodes();
 	return (0);
 }

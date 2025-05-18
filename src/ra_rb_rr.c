@@ -12,10 +12,34 @@
 
 #include "../inc/push_swap.h"
 
-void    ra(void)
+void	ra(void)
 {
-    t_data  *data;
+	t_data	*data;
 
-    data = get_data();
-    data->stack_a.
+	data = get_data();
+	data->stack_a.head->prev = data->stack_a.tail;
+	data->stack_a.tail->next = data->stack_a.head;
+	data->stack_a.head = data->stack_a.head->prev;
+	data->stack_a.tail = data->stack_a.tail->prev;
+	data->stack_a.head->prev = NULL;
+	data->stack_a.tail->next = NULL;
+}
+
+void	rb(void)
+{
+	t_data	*data;
+
+	data = get_data();
+	data->stack_b.head->prev = data->stack_b.tail;
+	data->stack_b.tail->next = data->stack_b.head;
+	data->stack_b.head = data->stack_b.head->prev;
+	data->stack_b.tail = data->stack_b.tail->prev;
+	data->stack_b.head->prev = NULL;
+	data->stack_b.tail->next = NULL;
+}
+
+void	rr(void)
+{
+	ra();
+	rb();
 }

@@ -12,19 +12,19 @@
 
 #include "../inc/push_swap.h"
 
-	void	pa(void)
-	{
-		t_data	*data;
-
-		data = get_data();
-		data->stack_a.tail->next = data->stack_b.tail;
-		data->stack_a.tail->next->prev = data->stack_a.tail;
-		data->stack_a.tail = data->stack_a.tail->next;
-		data->stack_b.tail = data->stack_b.tail->prev;
-		data->stack_b.tail->next = NULL;
-	}
-
 void	pa(void)
+{
+	t_data	*data;
+
+	data = get_data();
+	data->stack_a.tail->next = data->stack_b.tail;
+	data->stack_a.tail->next->prev = data->stack_a.tail;
+	data->stack_a.tail = data->stack_a.tail->next;
+	data->stack_b.tail = data->stack_b.tail->prev;
+	data->stack_b.tail->next = NULL;
+}
+
+void	pb(void)
 {
 	t_data	*data;
 

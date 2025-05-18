@@ -14,7 +14,7 @@
 
 void	sa(void)
 {
-	t_stacks	*data;
+	t_data	*data;
 
 	data = get_stacks();
 	data->stack_a.tail->num ^= data->stack_a.tail->prev->num;
@@ -24,7 +24,7 @@ void	sa(void)
 
 void	sb(void)
 {
-	t_stacks	*data;
+	t_data	*data;
 
 	data = get_stacks();
 	data->stack_b.tail->num ^= data->stack_b.tail->prev->num;
@@ -36,4 +36,4 @@ void	ss(void)
 {
 	sa();
 	sb();
-	}
+}
