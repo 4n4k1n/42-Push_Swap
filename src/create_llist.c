@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   create_llist.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hntest2 <hntest2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 10:25:46 by apregitz          #+#    #+#             */
-/*   Updated: 2025/05/15 11:21:54 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/05/25 15:56:40 by hntest2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "../../inc/push_swap.h"
+#include "push_swap.h"
 
 void	free_nodes(t_llist *head)
 {
@@ -29,7 +29,7 @@ static t_llist	*new_node(void)
 {
 	t_llist	*new;
 
-	new = (t_llist *)malloc(sizeof(t_llist));
+	new = (t_llist *)ft_malloc(sizeof(t_llist));
 	if (!new)
 		return (NULL);
 	new->num = 0;
@@ -46,7 +46,7 @@ t_llist	*create_llist(size_t size)
 	size_t		i;
 
 	i = 0;
-	new = (t_llist *)malloc(sizeof(t_llist));
+	new = new_node();
 	if (!new)
 		return (NULL);
 	temp = new;
@@ -55,7 +55,7 @@ t_llist	*create_llist(size_t size)
 		prev = temp;
 		temp->next = new_node();
 		if (!temp->next)
-			free_nodes(new);
+			return (NULL);
 		temp = temp->next;
 		temp->prev = prev;
 		i++;
