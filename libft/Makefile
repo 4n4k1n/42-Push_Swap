@@ -28,8 +28,9 @@ PRINTF_SRCS = ft_error.c ft_printf.c ft_putchar.c ft_puthex.c \
 
 GNL_SRCS = get_next_line_bonus.c get_next_line_utils_bonus.c
 
-EXTRA_SRC = ft_strrev.c ft_strsmsh.c ft_swp.c ft_strclen.c ft_kllarr.c ft_splitq.c \
-	__ft_splitq__alloc_word_q.c __ft_splitq__count_words_q.c __ft_splitq__get_word_index_q.c
+EXTRA_SRC = ft_strrev.c ft_strsmsh.c ft_swp.c ft_strclen.c ft_kllarr.c
+
+GC_SRC = garbage_collector.c
 
 SRCS := $(LIBFT_SRCS) $(PRINTF_SRCS) $(EXTRA_SRC) $(GNL_SRCS)
 

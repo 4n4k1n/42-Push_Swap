@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hntest2 <hntest2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 16:03:31 by anakin            #+#    #+#             */
-/*   Updated: 2025/05/09 19:48:44 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/05/25 14:35:42 by hntest2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "printf.h"
 # include "get_next_line_bonus.h"
 # include "extra.h"
+# include "gargage_collector.h"
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -72,5 +73,7 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+
+void				ft_free_split(char **arr);
 
 #endif

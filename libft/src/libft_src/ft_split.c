@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hntest2 <hntest2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 14:25:03 by anakin            #+#    #+#             */
-/*   Updated: 2025/03/09 13:47:19 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/05/25 14:35:04 by hntest2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 #include "libft.h"
 
-static void	ft_free_split(char **arr, int count)
+void	ft_free_split(char **arr)
 {
 	int	i;
 
 	i = 0;
-	while (i < count)
+	while (arr[i])
 	{
 		free(arr[i]);
 		i++;
@@ -98,7 +98,7 @@ char	**ft_split(char const *s, char c)
 		arr[i] = alloc_word(&s, c);
 		if (!arr[i])
 		{
-			ft_free_split(arr, i);
+			ft_free_split(arr);
 			return (NULL);
 		}
 		i++;
