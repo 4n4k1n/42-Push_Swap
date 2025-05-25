@@ -6,33 +6,42 @@
 /*   By: hntest2 <hntest2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 13:52:46 by hntest2           #+#    #+#             */
-/*   Updated: 2025/05/25 14:35:43 by hntest2          ###   ########.fr       */
+/*   Updated: 2025/05/25 16:17:21 by hntest2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	alloc_args(void)
+void	split_arg(t_data *data, t_llist	**llist)
+{
+	int i;
+	char **arr;
+	
+	arr = ft_split(arr, ' ');
+	if (!arr)
+		ft_exit(1);
+	i = -1;
+	while (arr[++i])
+	{
+		if (!ft_atoll(arr[i], *llist))
+			ft_exit(1);
+		llist = (*llist)->next;
+	}
+	ft_free_split(arr);
+}
+
+void	alloc_args(void)
 {
 	t_data	*data;
 	int		i;
-	int		j;
-	int		k;
+	t_llist	*temp;
 
 	data = get_data();
-	data->numbers = ft_malloc(data->words_count * sizeof(int));
-	if (!data->numbers)
-		return (0);
+	data->llist = ft_malloc(data->words_count * sizeof(long long));
+	if (!data->llist)
+		ft_exit(1);
 	i = 0;
-	k = -1;
+	temp = data->llist;
 	while (++i < data->ac)
-	{
-		data->str = ft_split(data->av[i], ' ');
-		if (!data->str)
-			return (0);
-		j = -1;
-		while (data->str[++j])
-			data->numbers[++k] = ft_atoi(data->str[j]);
-		ft_free_split(data->str);
-	}
+		split_arg(data, &temp);
 }
