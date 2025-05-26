@@ -8,7 +8,7 @@ RM = rm -f
 
 SRC_DIR = src
 OBJ_DIR = obj
-VPATH = $(SRC_DIR)/libft_src:$(SRC_DIR)/printf_src:$(SRC_DIR)/extra_src:$(SRC_DIR)/GNL_src
+VPATH = $(SRC_DIR)/libft_src:$(SRC_DIR)/printf_src:$(SRC_DIR)/extra_src:$(SRC_DIR)/GNL_src:$(SRC_DIR)/garbage_collector
 
 INCLUDES = -Iinc
 
@@ -32,65 +32,28 @@ EXTRA_SRC = ft_strrev.c ft_strsmsh.c ft_swp.c ft_strclen.c ft_kllarr.c
 
 GC_SRC = garbage_collector.c
 
-SRCS := $(LIBFT_SRCS) $(PRINTF_SRCS) $(EXTRA_SRC) $(GNL_SRCS)
+SRCS := $(LIBFT_SRCS) $(PRINTF_SRCS) $(EXTRA_SRC) $(GNL_SRCS) $(GC_SRC)
 
 OBJS := $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 
 all: $(NAME)
 
 $(NAME): $(OBJ_DIR) $(OBJS)
-	@$(AR) $(NAME) $(OBJS)
-	@echo
-	@echo
-	@echo "       >> COMPILED '$(NAME)' SUCCESSFULLY <<"
-	@echo
+	$(AR) $(NAME) $(OBJS)
 
 $(OBJ_DIR)/%.o: %.c 
-	@$(eval TOTAL := $(words $(SRCS)))
-	@$(eval PROGRESS := $(shell echo $$(($(PROGRESS)+1))))
-	@$(eval PERCENT := $(shell echo $$(($(PROGRESS)*100/$(TOTAL)))))
-	@$(call progress_bar,$(PERCENT))
-	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(OBJ_DIR):
-	@mkdir -p $(OBJ_DIR)
+	mkdir -p $(OBJ_DIR)
 
 clean:
-	@$(RM) -r $(OBJ_DIR)
-	@echo
-	@echo "Removed '*.o' files from '$(OBJ_DIR)' directory"
-	@echo
+	$(RM) -r $(OBJ_DIR)
 
 fclean:
-	@$(RM) $(NAME)
-	@$(RM) -r $(OBJ_DIR)
-	@echo
-	@echo "   >> Removed '*.o' files from '$(OBJ_DIR)' directory <<"
-	@echo "           >>Removed $(NAME) from root <<"
-	@echo
+	$(RM) $(NAME)
+	$(RM) -r $(OBJ_DIR)
 
 re: fclean all
 
 .PHONY: all clean fclean re
-
-
-RED     := $(shell tput setaf 1)
-GREEN   := $(shell tput setaf 2)
-YELLOW  := $(shell tput setaf 3)
-BLUE    := $(shell tput setaf 4)
-MAGENTA := $(shell tput setaf 5)
-CYAN    := $(shell tput setaf 6)
-WHITE   := $(shell tput setaf 7)
-RESET   := $(shell tput sgr0)
-
-define progress_bar
-	@printf "$(CYAN)["; \
-	for i in $(shell seq 1 50); do \
-		if [ $$i -le $$(($(1)*50/100)) ]; then \
-			printf "$(GREEN)█$(RESET)"; \
-		else \
-			printf "$(WHITE)░$(RESET)"; \
-		fi; \
-	done; \
-	printf "$(CYAN)] %3d%%$(RESET)\r" $(1);
-endef
