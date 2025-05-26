@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 10:25:46 by apregitz          #+#    #+#             */
-/*   Updated: 2025/05/26 10:14:41 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/05/26 10:24:29 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ void	free_nodes(t_llist *head)
 {
 	t_llist	*temp;
 
-	while (head->next)
+	while (head)
 	{
-		temp = head;
-		head = head->next;
-		free(temp);
+		temp = head->next;
+		free(head);
+		head = temp;
 	}
 }
 
@@ -44,7 +44,9 @@ t_llist	*create_llist(size_t size)
 	t_llist	*prev;
 	size_t		i;
 
-	i = 0;
+	if (size == 0)
+		return (NULL);
+	i = 1;
 	new = new_node();
 	if (!new)
 		return (NULL);
@@ -54,7 +56,7 @@ t_llist	*create_llist(size_t size)
 		prev = temp;
 		temp->next = new_node();
 		if (!temp->next)
-			return (NULL);
+			return (free_nodes(new), NULL);
 		temp = temp->next;
 		temp->prev = prev;
 		i++;
