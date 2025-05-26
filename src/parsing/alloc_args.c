@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:15:25 by apregitz          #+#    #+#             */
-/*   Updated: 2025/05/26 13:37:43 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/05/26 13:52:36 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,12 @@ static t_llist	*split_arg(char *str, t_llist *llist)
 void	alloc_args(t_data *data)
 {
 	int		i;
-	int		index;
 	t_llist	*temp;
 
 	data->stack_a.head = create_llist(data->words_count);
 	if (!data->stack_a.head)
 		ft_exit(1);
 	temp = data->stack_a.head;
-	index = 0;
 	i = 0;
 	while (++i < data->ac)
 		temp = split_arg(data->av[i], temp);
