@@ -6,7 +6,7 @@
 /*   By: hntest2 <hntest2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 12:34:58 by hntest2           #+#    #+#             */
-/*   Updated: 2025/05/26 07:30:37 by hntest2          ###   ########.fr       */
+/*   Updated: 2025/05/26 08:04:20 by hntest2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int					count_numbers(t_data *data);
 int					valid_input(t_data *data);
 void				alloc_args(t_data *data);
 int 				parsing(int ac, char **av);
+int 				is_unique(t_data *data);
 
 // utils
 t_data				*get_data(void);
