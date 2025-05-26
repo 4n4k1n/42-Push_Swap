@@ -6,7 +6,7 @@
 /*   By: hntest2 <hntest2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 12:44:42 by hntest2           #+#    #+#             */
-/*   Updated: 2025/05/25 13:00:48 by hntest2          ###   ########.fr       */
+/*   Updated: 2025/05/26 05:25:30 by hntest2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ static int	valid_set(const char *arg)
 	return (1);
 }
 
-int	valid_input(int ac, char **av)
+int	valid_input(t_data *data)
 {
 	int i;
 
 	i = 0;
-	while (++i < ac)
+	while (++i < data->ac)
 	{
-		if (!valid_set(av[i]))
+		if (!valid_set(data->av[i]))
 			return (0);
 		i++;
 	}
