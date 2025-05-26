@@ -6,7 +6,7 @@
 /*   By: hntest2 <hntest2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 11:52:08 by apregitz          #+#    #+#             */
-/*   Updated: 2025/05/25 15:25:08 by hntest2          ###   ########.fr       */
+/*   Updated: 2025/05/26 08:15:10 by hntest2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	rra(void)
 	data->stack_a.tail->next = NULL;
 }
 
-void	rra(void)
+void	rrb(void)
 {
 	t_data	*data;
 
