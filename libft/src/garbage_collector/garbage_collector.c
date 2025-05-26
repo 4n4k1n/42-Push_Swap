@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 13:05:17 by hntest2           #+#    #+#             */
-/*   Updated: 2025/05/26 10:14:54 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/05/26 10:22:49 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 static t_gcll_data	*get_gcll_data(void)
 {
-	static t_gcll_data data;
+	static t_gcll_data	data;
 
 	return (&data);
 }
+
 void	*ft_add_to_gc(void *ptr)
 {
 	t_gcll_data	*data;
@@ -27,20 +28,29 @@ void	*ft_add_to_gc(void *ptr)
 		return (NULL);
 	data = get_gcll_data();
 	node = malloc(sizeof(t_gcll));
+	if (!node)
+		return (NULL);
+	node->ptr = ptr;
 	node->next = NULL;
-	data->tail->next = node;
-	data->tail = data->tail->next;
+	if (!data->head)
+	{
+		data->head = node;
+		data->tail = node;
+	}
+	else
+	{
+		data->tail->next = node;
+		data->tail = node;
+	}
 	return (ptr);
 }
 
-
-void ft_free(void)
+void	ft_free(void)
 {
 	t_gcll_data	*data;
 	t_gcll		*temp;
 
 	data = get_gcll_data();
-	temp = data->head;
 	while (data->head)
 	{
 		temp = data->head->next;
@@ -48,27 +58,33 @@ void ft_free(void)
 		free(data->head);
 		data->head = temp;
 	}
+	data->tail = NULL;
 }
 
 void	*ft_malloc(size_t size)
 {
 	t_gcll_data	*data;
 	t_gcll		*node;
+	void		*ptr;
 
 	data = get_gcll_data();
+	ptr = malloc(size);
+	if (!ptr)
+		return (NULL);
 	node = malloc(sizeof(t_gcll));
 	if (!node)
-		return (NULL);
-	node->ptr = malloc(size);
-	if (!node->ptr)
-		return (NULL);
+		return (free(ptr), NULL);
+	node->ptr = ptr;
+	node->next = NULL;
 	if (!data->head)
+	{
 		data->head = node;
+		data->tail = node;
+	}
 	else
 	{
 		data->tail->next = node;
-		data->tail = data->tail->next;
+		data->tail = node;
 	}
-	node->next = NULL;
-	return (node->ptr);
+	return (ptr);
 }
