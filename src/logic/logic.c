@@ -6,13 +6,13 @@
 /*   By: hntest2 <hntest2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 05:51:11 by hntest2           #+#    #+#             */
-/*   Updated: 2025/05/26 08:07:41 by hntest2          ###   ########.fr       */
+/*   Updated: 2025/05/26 08:17:57 by hntest2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int push_to_stack_b(t_data *data)
+static int push_to_stack_b(t_data *data)
 {
 	size_t	count;
 
@@ -37,12 +37,10 @@ int push_to_stack_b(t_data *data)
 	return (1);
 }
 
-int	push_to_stack_a(t_data *data);
-
 void	logic(void)
 {
 	t_data	*data;
 
 	data = get_data();
-	push_to_stack_a(data);
+	push_to_stack_b(data);
 }
