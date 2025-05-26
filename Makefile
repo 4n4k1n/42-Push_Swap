@@ -17,14 +17,16 @@ MAIN_SRCS = main.c
 PARSING_SRCS = alloc_args.c \
                 count_numbers.c \
                 parsing.c \
-                valid_input.c
+                valid_input.c \
+                is_unique.c
 
 LOGIC_SRCS = logic.c
 
 UTILS_SRCS = cwords.c \
             ft_atoll.c \
             ft_exit.c \
-            get_stacks.c
+            get_stacks.c \
+            ft_sqrt.c
 
 OPER_SRCS = pa_pb.c \
             ra_rb_rr.c \
@@ -33,7 +35,7 @@ OPER_SRCS = pa_pb.c \
 
 LLIST_SRCS = create_llist.c
 
-SRCS := $(MAIN_SRCS) $(PARSING_SRCS) $(LOGIC_SRCS) $(UTILS_SRCS) $(SORTING_SRCS)
+SRCS := $(MAIN_SRCS) $(PARSING_SRCS) $(LOGIC_SRCS) $(UTILS_SRCS) $(OPER_SRCS) $(LLIST_SRCS)
 
 OBJS := $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 
