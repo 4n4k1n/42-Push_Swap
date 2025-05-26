@@ -6,7 +6,7 @@
 /*   By: hntest2 <hntest2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 12:34:58 by hntest2           #+#    #+#             */
-/*   Updated: 2025/05/25 16:12:30 by hntest2          ###   ########.fr       */
+/*   Updated: 2025/05/26 05:30:36 by hntest2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,17 @@ typedef struct s_data
 	int				words_count;
 	int				ac;
 	char			**av;
-	t_llist			*llist;
 }					t_data;
 
-int					cwords(char const *s, char c);
-int					count_numbers(int ac, char **av);
-int					valid_input(int ac, char **av);
+int					count_numbers(t_data *data);
+int					valid_input(t_data *data);
+void				alloc_args(t_data *data);
 
 t_data				*get_data(void);
 
 void				ft_exit(int	error);
 
+int					cwords(char const *s, char c);
 int					ft_atoll(char *str, t_llist *node);
 
 #endif
