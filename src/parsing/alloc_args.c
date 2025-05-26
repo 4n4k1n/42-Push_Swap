@@ -6,13 +6,13 @@
 /*   By: hntest2 <hntest2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 13:52:46 by hntest2           #+#    #+#             */
-/*   Updated: 2025/05/25 16:17:21 by hntest2          ###   ########.fr       */
+/*   Updated: 2025/05/26 05:35:02 by hntest2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	split_arg(t_data *data, t_llist	**llist)
+static void	split_arg(t_data *data, t_llist	**llist)
 {
 	int i;
 	char **arr;
@@ -30,18 +30,16 @@ void	split_arg(t_data *data, t_llist	**llist)
 	ft_free_split(arr);
 }
 
-void	alloc_args(void)
+void	alloc_args(t_data *data)
 {
-	t_data	*data;
 	int		i;
 	t_llist	*temp;
 
-	data = get_data();
-	data->llist = ft_malloc(data->words_count * sizeof(long long));
-	if (!data->llist)
+	data->stack_a.head = ft_malloc(data->words_count * sizeof(long long));
+	if (!data->stack_a.head)
 		ft_exit(1);
 	i = 0;
-	temp = data->llist;
+	temp = data->stack_a.head;
 	while (++i < data->ac)
 		split_arg(data, &temp);
 }
