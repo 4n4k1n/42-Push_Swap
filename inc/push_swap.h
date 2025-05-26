@@ -6,7 +6,7 @@
 /*   By: hntest2 <hntest2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 12:34:58 by hntest2           #+#    #+#             */
-/*   Updated: 2025/05/26 05:30:36 by hntest2          ###   ########.fr       */
+/*   Updated: 2025/05/26 05:56:54 by hntest2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,32 @@ typedef struct s_data
 	char			**av;
 }					t_data;
 
+// parsing
 int					count_numbers(t_data *data);
 int					valid_input(t_data *data);
 void				alloc_args(t_data *data);
 
+// utils
 t_data				*get_data(void);
-
 void				ft_exit(int	error);
-
 int					cwords(char const *s, char c);
 int					ft_atoll(char *str, t_llist *node);
+
+// operations
+void				pa(void);
+void				pb(void);
+void				sa(void);
+void				sb(void);
+void				ss(void);
+void				ra(void);
+void				rb(void);
+void				rr(void);
+void				rra(void);
+void				rrb(void);
+void				rrr(void);
+
+// llist
+void				free_nodes(t_llist *head);
+t_llist				*create_llist(size_t size);
 
 #endif
