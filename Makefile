@@ -3,31 +3,35 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
+LIBFT = libft/libft.a
 
 SRC_DIR = src
 OBJ_DIR = obj
 
-VPATH = $(SRC_DIR):$(SRC_DIR)/parsing:$(SRC_DIR)/logic:$(SRC_DIR)/utils:$(SRC_DIR)/sorting
+VPATH = $(SRC_DIR):$(SRC_DIR)/parsing:$(SRC_DIR)/logic:$(SRC_DIR)/utils:$(SRC_DIR)/operations:$(SRC_DIR)/llist
 
 INCLUDES = -Iinc
 
 MAIN_SRCS = main.c
 
-PARSING_SRCS = parser.c \
-               input_validation.c \
-               error_handling.c
+PARSING_SRCS = alloc_args.c \
+                count_numbers.c \
+                parsing.c \
+                valid_input.c
 
-LOGIC_SRCS = algorithm.c \
-             stack_operations.c \
-             optimization.c
+LOGIC_SRCS = logic.c
 
-UTILS_SRCS = utils.c \
-             memory.c \
-             string_utils.c
+UTILS_SRCS = cwords.c \
+            ft_atoll.c \
+            ft_exit.c \
+            get_stacks.c
 
-SORTING_SRCS = quick_sort.c \
-               merge_sort.c \
-               push_swap_algo.c
+OPER_SRCS = pa_pb.c \
+            ra_rb_rr.c \
+            rra_rrb_rrr.c \
+            sa_sb_ss.c
+
+LLIST_SRCS = create_llist.c
 
 SRCS := $(MAIN_SRCS) $(PARSING_SRCS) $(LOGIC_SRCS) $(UTILS_SRCS) $(SORTING_SRCS)
 
@@ -35,20 +39,25 @@ OBJS := $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 
 all: $(NAME)
 
-$(NAME): $(OBJ_DIR) $(OBJS)
-	$(CC) $(OBJS) -o $(NAME)
+$(LIBFT):
+	$(MAKE) -C libft
+
+$(NAME): $(OBJ_DIR) $(OBJS) $(LIBFT)
+	$(CC) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(OBJ_DIR)/%.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(OBJ_DIR):
-	@mkdir -p $(OBJ_DIR)
+	mkdir -p $(OBJ_DIR)
 
 clean:
-	@$(RM) -r $(OBJ_DIR)
+    $(MAKE) -C libft clean
+	$(RM) -r $(OBJ_DIR)
 
 fclean: clean
-	@$(RM) $(NAME)
+    $(MAKE) -C libft clean
+	$(RM) $(NAME)
 
 re: fclean all
 
