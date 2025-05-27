@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hntest2 <hntest2@student.42.fr>            +#+  +:+       +#+        */
+/*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 12:34:58 by hntest2           #+#    #+#             */
-/*   Updated: 2025/05/26 08:04:20 by hntest2          ###   ########.fr       */
+/*   Updated: 2025/05/27 13:11:18 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int					valid_input(t_data *data);
 void				alloc_args(t_data *data);
 int 				parsing(int ac, char **av);
 int 				is_unique(t_data *data);
+void 				index_llist(t_data *data);
 
 // utils
 t_data				*get_data(void);
@@ -69,6 +70,11 @@ void				rrr(void);
 
 // llist
 void				free_nodes(t_llist *head);
-t_llist				*create_llist(size_t size);
+void				create_llist(size_t size, t_data *data);
+
+// logic
+void				logic(void);
+
+void	print_llist(t_llist *temp);
 
 #endif
