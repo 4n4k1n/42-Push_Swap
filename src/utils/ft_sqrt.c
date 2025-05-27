@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:16:25 by apregitz          #+#    #+#             */
-/*   Updated: 2025/05/26 10:16:27 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/05/27 11:44:38 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_sqrt(int nb)
 	check = 1;
 	while (ft_iterative_power(check, 2) < nb)
 		check++;
-	if (ft_iterative_power(check, 2) == nb)
-		return (check);
-	return (0);
+	// if (ft_iterative_power(check, 2) == nb)
+	// 	return (check);
+	return (check);
 }
