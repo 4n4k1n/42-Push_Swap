@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 10:09:31 by apregitz          #+#    #+#             */
-/*   Updated: 2025/05/26 10:14:08 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/05/27 10:26:01 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	pa(void)
 	data->stack_a.head = data->stack_a.head->prev;
 	data->stack_a.head->prev = NULL;
 	data->stack_b.head->prev = NULL;
+	data->stack_a.size++;
+	data->stack_b.size--;
 }
 
 void	pb(void)
@@ -36,4 +38,6 @@ void	pb(void)
 	data->stack_b.head = data->stack_b.head->prev;
 	data->stack_b.head->prev = NULL;
 	data->stack_a.head->prev = NULL;
+	data->stack_a.size--;
+	data->stack_b.size++;
 }
