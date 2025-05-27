@@ -18,7 +18,8 @@ PARSING_SRCS = alloc_args.c \
                 count_numbers.c \
                 parsing.c \
                 valid_input.c \
-                is_unique.c
+                is_unique.c \
+                index_llist.c
 
 LOGIC_SRCS = logic.c
 
