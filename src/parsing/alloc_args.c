@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:15:25 by apregitz          #+#    #+#             */
-/*   Updated: 2025/05/26 13:52:36 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/05/27 11:34:30 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void	alloc_args(t_data *data)
 	int		i;
 	t_llist	*temp;
 
-	data->stack_a.head = create_llist(data->words_count);
+	create_llist(data->words_count, data);
 	if (!data->stack_a.head)
-		ft_exit(1);
+		ft_exit(2);
 	temp = data->stack_a.head;
 	i = 0;
 	while (++i < data->ac)
