@@ -2,7 +2,7 @@ NAME = push_swap
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
-LDFLAGS = -fsanitize=address,undefined
+# LDFLAGS = -fsanitize=address,undefined
 LIBFT = libft/libft.a
 
 SRC_DIR = src
@@ -46,10 +46,10 @@ $(LIBFT):
 	$(MAKE) -C libft
 
 $(NAME): $(OBJ_DIR) $(OBJS) $(LIBFT)
-	$(CC) $(OBJS) $(LIBFT) $(LDFLAGS) -o $(NAME)
+	$(CC) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(OBJ_DIR)/%.o: %.c
-	$(CC) $(CFLAGS) $(LDFLAGS) $(INCLUDES) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
