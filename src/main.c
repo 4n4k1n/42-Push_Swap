@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:16:38 by apregitz          #+#    #+#             */
-/*   Updated: 2025/05/27 12:30:26 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/05/27 17:49:43 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(int ac, char **av)
 	t_llist	*temp = data->stack_a.head;
 	print_llist(temp);
 	printf("\n\n\n");
-	// logic();
+	logic();
 	temp = data->stack_a.head;
 	print_llist(temp);
 	return (0);
