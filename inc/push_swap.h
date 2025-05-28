@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 12:34:58 by hntest2           #+#    #+#             */
-/*   Updated: 2025/05/27 13:11:18 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/05/28 09:46:21 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_data
 	int				words_count;
 	int				ac;
 	char			**av;
+	size_t			operations;
 }					t_data;
 
 // parsing
@@ -75,6 +76,7 @@ void				create_llist(size_t size, t_data *data);
 // logic
 void				logic(void);
 
-void	print_llist(t_llist *temp);
+// debug
+// void				print_llist(t_llist *temp);
 
 #endif
