@@ -79,4 +79,8 @@ re: fclean all
 
 bre: fclean bonus
 
+mb: all bonus
+
+mbre: bre mb
+
 .PHONY: all bonus clean fclean re bre
