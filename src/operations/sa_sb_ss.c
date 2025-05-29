@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:13:35 by apregitz          #+#    #+#             */
-/*   Updated: 2025/05/28 10:03:17 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/05/29 11:20:54 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ void	sa(void)
 	data->stack_a.head->num ^= data->stack_a.head->next->num;
 	data->stack_a.head->next->num ^= data->stack_a.head->num;
 	data->stack_a.head->num ^= data->stack_a.head->next->num;
-	ft_printf("sa\n");
+	if (!data->is_checker)
+		ft_printf("sa\n");
 }
 
 void	sb(void)
@@ -35,12 +36,17 @@ void	sb(void)
 	data->stack_b.head->num ^= data->stack_b.head->next->num;
 	data->stack_b.head->next->num ^= data->stack_b.head->num;
 	data->stack_b.head->num ^= data->stack_b.head->next->num;
-	ft_printf("sb\n");
+	if (!data->is_checker)
+		ft_printf("sb\n");
 }
 
 void	ss(void)
 {
+	t_data	*data;
+
+	data = get_data();
 	sa();
 	sb();
-	ft_printf("ss\n");
+	if (!data->is_checker)
+		ft_printf("ss\n");
 }
