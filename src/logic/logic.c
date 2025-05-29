@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 05:51:11 by hntest2           #+#    #+#             */
-/*   Updated: 2025/05/28 09:47:12 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/05/29 11:23:18 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void	logic(void)
 	t_data	*data;
 
 	data = get_data();
+	data->is_checker = 0;
 	push_to_stack_b(data);
 	// print_llist(data->stack_b.head);
 	// printf("\n\n\n");
