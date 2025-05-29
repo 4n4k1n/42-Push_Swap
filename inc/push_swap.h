@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 12:34:58 by hntest2           #+#    #+#             */
-/*   Updated: 2025/05/28 09:46:21 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/05/29 11:06:31 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct s_data
 	int				ac;
 	char			**av;
 	size_t			operations;
+	int				is_checker;
 }					t_data;
 
 // parsing
@@ -55,6 +56,7 @@ void				ft_exit(int	error);
 int					cwords(char const *s, char c);
 int					ft_atoll(char *str, t_llist *node);
 int					ft_sqrt(int nb);
+int					is_sorted(void);
 
 // operations
 void				pa(void);
