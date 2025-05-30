@@ -1,52 +1,58 @@
-NAME = push_swap
-NAME_BONUS = checker
+NAME =			push_swap
+NAME_BONUS =	checker
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror -g
-# LDFLAGS = -fsanitize=address,undefined
-LIBFT = libft/libft.a
+CC =			cc
+CFLAGS =		-Wall -Wextra -Werror -g
+LIBFT =			libft/libft.a
 
-SRC_DIR = src
-OBJ_DIR = obj
+SRC_DIR =		src
+OBJ_DIR =		obj
 
-VPATH = $(SRC_DIR):$(SRC_DIR)/parsing:$(SRC_DIR)/logic:$(SRC_DIR)/utils:$(SRC_DIR)/operations:$(SRC_DIR)/llist:$(SRC_DIR)/checker
+VPATH =			$(SRC_DIR):\
+				$(SRC_DIR)/parsing:\
+				$(SRC_DIR)/logic:\
+				$(SRC_DIR)/utils:\
+				$(SRC_DIR)/operations:\
+				$(SRC_DIR)/llist:\
+				$(SRC_DIR)/checker
 
-INCLUDES = -Iinc
+INCLUDES =		-Iinc
 
-MAIN_SRCS = main.c
+MAIN_SRCS =		main.c
 
-PARSING_SRCS = alloc_args.c \
-                count_numbers.c \
-                parsing.c \
-                valid_input.c \
-                is_unique.c \
-                index_llist.c
+PARSING_SRCS =	alloc_args.c \
+				count_numbers.c \
+				parsing.c \
+				valid_input.c \
+				is_unique.c \
+				index_llist.c
 
-LOGIC_SRCS = logic.c
+LOGIC_SRCS =	logic.c \
+				edge_cases.c
 
-UTILS_SRCS = cwords.c \
-            ft_atoll.c \
-            ft_exit.c \
-            get_stacks.c \
-            ft_sqrt.c \
-            is_sorted.c
+UTILS_SRCS =	cwords.c \
+				ft_atoll.c \
+				ft_exit.c \
+				get_stacks.c \
+				ft_sqrt.c \
+				is_sorted.c
 
-OPER_SRCS = pa_pb.c \
-            ra_rb_rr.c \
-            rra_rrb_rrr.c \
-            sa_sb_ss.c
+OPER_SRCS = 	pa_pb.c \
+				ra_rb_rr.c \
+				rra_rrb_rrr.c \
+				sa_sb_ss.c
 
-LLIST_SRCS = create_llist.c
+LLIST_SRCS =	create_llist.c
 
-CHECKER_SRCS = checker.c
+CHECKER_SRCS =	checker.c
 
-SRCS := $(MAIN_SRCS) $(PARSING_SRCS) $(LOGIC_SRCS) $(UTILS_SRCS) $(OPER_SRCS) $(LLIST_SRCS)
+SRCS :=			$(MAIN_SRCS) $(PARSING_SRCS) $(LOGIC_SRCS) $(UTILS_SRCS) $(OPER_SRCS) $(LLIST_SRCS)
 
-BONUS_SRCS := $(PARSING_SRCS) $(OPER_SRCS) $(LLIST_SRCS) $(UTILS_SRCS) $(CHECKER_SRCS)
+BONUS_SRCS :=	$(PARSING_SRCS) $(OPER_SRCS) $(LLIST_SRCS) $(UTILS_SRCS) $(CHECKER_SRCS)
 
-OBJS := $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
+OBJS :=			$(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 
-BONUS_OBJS := $(addprefix $(OBJ_DIR)/, $(BONUS_SRCS:.c=.o))
+BONUS_OBJS :=	$(addprefix $(OBJ_DIR)/, $(BONUS_SRCS:.c=.o))
 
 all: $(NAME)
 
