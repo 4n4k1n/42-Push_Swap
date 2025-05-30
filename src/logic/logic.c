@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 05:51:11 by hntest2           #+#    #+#             */
-/*   Updated: 2025/05/29 11:23:18 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/05/30 11:47:01 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,16 @@ static size_t get_highest_number(t_data *data, int	*highest)
 		i++;
 	}
 	return (index);
-}	
+}
 
 static int push_to_stack_b(t_data *data)
 {
 	int	count;
 
+	if (data->stack_a.size == 2)
+		return (ra(), 1);
 	count = 0;
-	data->range = ft_sqrt(data->stack_a.size) * 1.6;
+	data->range = ft_sqrt(data->stack_a.size) * 1.5;
 	while (data->stack_a.size)
 	{
 		if (data->stack_a.head->num <= count)
@@ -89,10 +91,10 @@ void	logic(void)
 	t_data	*data;
 
 	data = get_data();
+	data->both = 0;
 	data->is_checker = 0;
+	if (data->stack_a.size < 6)
+		return (edge_cases(data));
 	push_to_stack_b(data);
-	// print_llist(data->stack_b.head);
-	// printf("\n\n\n");
 	push_to_stack_a(data);
-	// printf("test test\n");
 }
