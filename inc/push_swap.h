@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 12:34:58 by hntest2           #+#    #+#             */
-/*   Updated: 2025/05/29 11:06:31 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/05/30 11:46:54 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_data
 	char			**av;
 	size_t			operations;
 	int				is_checker;
+	int				both;
 }					t_data;
 
 // parsing
@@ -77,6 +78,7 @@ void				create_llist(size_t size, t_data *data);
 
 // logic
 void				logic(void);
+void				edge_cases(t_data *data);
 
 // debug
 // void				print_llist(t_llist *temp);
