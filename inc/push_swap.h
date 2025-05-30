@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 12:34:58 by hntest2           #+#    #+#             */
-/*   Updated: 2025/05/30 11:46:54 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/05/30 14:06:59 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_llist
 	struct s_llist	*next;
 	struct s_llist	*prev;
 	int				num;
+	int				index;
 }					t_llist;
 
 typedef struct s_stack
@@ -38,7 +39,6 @@ typedef struct s_data
 	int				words_count;
 	int				ac;
 	char			**av;
-	size_t			operations;
 	int				is_checker;
 	int				both;
 }					t_data;
@@ -58,6 +58,9 @@ int					cwords(char const *s, char c);
 int					ft_atoll(char *str, t_llist *node);
 int					ft_sqrt(int nb);
 int					is_sorted(void);
+int					min_num(t_data *data);
+int					find_min_position(t_data *data, int min);
+void				move_min_to_top(t_data *data, int min);
 
 // operations
 void				pa(void);
