@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 05:51:11 by hntest2           #+#    #+#             */
-/*   Updated: 2025/05/30 11:47:01 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/06/07 12:15:33 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int push_to_stack_b(t_data *data)
 	if (data->stack_a.size == 2)
 		return (ra(), 1);
 	count = 0;
-	data->range = ft_sqrt(data->stack_a.size) * 1.5;
+	data->range = ft_sqrt(data->stack_a.size) * 1.6;
 	while (data->stack_a.size)
 	{
 		if (data->stack_a.head->num <= count)

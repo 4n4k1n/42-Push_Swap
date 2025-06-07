@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 10:48:14 by apregitz          #+#    #+#             */
-/*   Updated: 2025/05/29 11:29:17 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/06/07 12:03:15 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,16 @@ int	execute_operation(char *str)
 	return (1);
 }
 
-int compare_results(void)
+int	compare_results(void)
 {
-	t_data	*data;
+	t_data 	*data;
 	t_llist	*llist;
 
 	data = get_data();
-	if (!data->stack_a.head)
-		return (1);
 	if (data->stack_b.head)
 		return (0);
+	if (!data->stack_a.head)
+		return (1);
 	llist = data->stack_a.head;
 	while (llist->next)
 	{
