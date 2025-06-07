@@ -35,7 +35,8 @@ UTILS_SRCS =	cwords.c \
 				ft_exit.c \
 				get_stacks.c \
 				ft_sqrt.c \
-				is_sorted.c
+				is_sorted.c \
+				edge_cases_utils.c
 
 OPER_SRCS = 	pa_pb.c \
 				ra_rb_rr.c \
