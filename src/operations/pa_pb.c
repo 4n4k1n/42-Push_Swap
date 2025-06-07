@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 10:09:31 by apregitz          #+#    #+#             */
-/*   Updated: 2025/05/29 11:18:35 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/06/07 10:58:47 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	pa(void)
 	data->stack_a.head = node;
 	data->stack_a.size++;
 	data->stack_b.size--;
-	data->operations++;
 	if (!data->is_checker)
 		ft_printf("pa\n");
 }
@@ -63,7 +62,6 @@ void	pb(void)
 	data->stack_b.head = node;
 	data->stack_a.size--;
 	data->stack_b.size++;
-	data->operations++;
 	if (!data->is_checker)
 		ft_printf("pb\n");
 }
