@@ -31,7 +31,6 @@ LOGIC_SRCS =	logic.c \
 				edge_cases.c
 
 UTILS_SRCS =	cwords.c \
-				ft_atoll.c \
 				ft_exit.c \
 				get_stacks.c \
 				ft_sqrt.c \

@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:16:19 by apregitz          #+#    #+#             */
-/*   Updated: 2025/05/26 10:16:20 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/06/08 06:11:23 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 void	ft_exit(int	error)
 {
 	ft_free();
+	write(2, "Error\n", 6);
 	exit(error);
 }
