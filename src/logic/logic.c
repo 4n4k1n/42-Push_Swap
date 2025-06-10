@@ -6,14 +6,14 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 05:51:11 by hntest2           #+#    #+#             */
-/*   Updated: 2025/06/07 12:15:33 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/06/10 11:17:44 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <math.h>
 
-static size_t get_highest_number(t_data *data, int	*highest)
+static size_t	get_highest_number(t_data *data, int	*highest)
 {
 	t_llist	*temp;
 	size_t	i;
@@ -36,7 +36,7 @@ static size_t get_highest_number(t_data *data, int	*highest)
 	return (index);
 }
 
-static int push_to_stack_b(t_data *data)
+static int	push_to_stack_b(t_data *data)
 {
 	int	count;
 
@@ -63,14 +63,14 @@ static int push_to_stack_b(t_data *data)
 	return (1);
 }
 
-static void push_to_stack_a(t_data *data)
+static void	push_to_stack_a(t_data *data)
 {
 	int		highest_num;
 	size_t	index;	
-	
+
 	while (data->stack_b.size > 0)
 	{
-		index = get_highest_number(data, &highest_num); 
+		index = get_highest_number(data, &highest_num);
 		if (index < data->stack_b.size / 2)
 		{
 			while (data->stack_b.head->num != highest_num)

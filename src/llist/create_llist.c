@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 10:25:46 by apregitz          #+#    #+#             */
-/*   Updated: 2025/05/27 11:36:24 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/06/10 11:16:37 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	create_llist(size_t size, t_data *data)
 	t_llist	*new;
 	t_llist	*temp;
 	t_llist	*prev;
-	size_t		i;
+	size_t	i;
 
 	if (size == 0)
 		return ;

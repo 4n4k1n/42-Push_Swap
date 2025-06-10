@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:15:52 by apregitz          #+#    #+#             */
-/*   Updated: 2025/05/27 13:09:25 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/06/10 11:20:52 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	valid_set(const char *arg)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (arg[i])
@@ -29,7 +29,7 @@ static int	valid_set(const char *arg)
 
 int	valid_input(t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (++i < data->ac)

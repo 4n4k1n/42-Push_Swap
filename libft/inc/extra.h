@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 17:19:22 by apregitz          #+#    #+#             */
-/*   Updated: 2025/05/12 14:26:40 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/06/10 11:14:00 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ typedef struct s_dw_data
 
 typedef struct s_aw_data
 {
-	int     i;
-	int     j;
-	char    quote_type;
-	char    *arr;
-	int     escaped;
-	int     len;
+	int		i;
+	int		j;
+	char	quote_type;
+	char	*arr;
+	int		escaped;
+	int		len;
 }			t_aw_data;
 
 char		*ft_strrev(char *string);

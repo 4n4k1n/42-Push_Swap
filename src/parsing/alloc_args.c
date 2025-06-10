@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:15:25 by apregitz          #+#    #+#             */
-/*   Updated: 2025/06/08 06:01:36 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/06/10 11:19:28 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static t_llist	*split_arg(char *str, t_llist *llist)
 	int		i;
 	char	**arr;
 	long	temp;
-	
+
 	arr = ft_split(str, ' ');
 	if (!arr)
 		ft_exit(1);

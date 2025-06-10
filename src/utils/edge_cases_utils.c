@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 11:59:03 by apregitz          #+#    #+#             */
-/*   Updated: 2025/05/30 12:02:19 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/06/10 11:21:05 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	min_num(t_data *data)
 	int		min;
 
 	temp = data->stack_a.head;
-	min = temp->num; 
+	min = temp->num;
 	while (temp->next)
 	{
 		if (min > temp->next->num)

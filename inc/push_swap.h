@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 12:34:58 by hntest2           #+#    #+#             */
-/*   Updated: 2025/05/30 14:06:59 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/06/10 11:13:11 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,13 @@ typedef struct s_data
 int					count_numbers(t_data *data);
 int					valid_input(t_data *data);
 void				alloc_args(t_data *data);
-int 				parsing(int ac, char **av);
-int 				is_unique(t_data *data);
-void 				index_llist(t_data *data);
+int					parsing(int ac, char **av);
+int					is_unique(t_data *data);
+void				index_llist(t_data *data);
 
 // utils
 t_data				*get_data(void);
-void				ft_exit(int	error);
+void				ft_exit(int error);
 int					cwords(char const *s, char c);
 int					ft_atoll(char *str, t_llist *node);
 int					ft_sqrt(int nb);

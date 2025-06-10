@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 14:01:50 by apregitz          #+#    #+#             */
-/*   Updated: 2025/05/27 08:54:40 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/06/10 11:20:27 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static t_llist	**create_llist_arr(t_data *data)
 	t_llist	*temp;
 	int		i;
 
-	nodes = malloc(data->stack_a.size * sizeof(t_llist*));
+	nodes = malloc(data->stack_a.size * sizeof(t_llist *));
 	if (!nodes)
 		ft_exit(1);
 	temp = data->stack_a.head;
@@ -56,7 +56,7 @@ static void	sort_llist_arr(t_llist **nodes, t_data *data)
 	}
 }
 
-static void overwrite_value_with_index(t_llist **nodes, t_data *data)
+static void	overwrite_value_with_index(t_llist **nodes, t_data *data)
 {
 	size_t	i;
 
@@ -68,12 +68,12 @@ static void overwrite_value_with_index(t_llist **nodes, t_data *data)
 	}
 }
 
-void index_llist(t_data *data)
+void	index_llist(t_data *data)
 {
 	t_llist	**nodes;
 
 	if (!data->stack_a.head)
-		return;
+		return ;
 	nodes = create_llist_arr(data);
 	sort_llist_arr(nodes, data);
 	overwrite_value_with_index(nodes, data);

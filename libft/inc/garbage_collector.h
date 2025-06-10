@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gargage_collector.h                                :+:      :+:    :+:   */
+/*   garbage_collector.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:15:10 by apregitz          #+#    #+#             */
-/*   Updated: 2025/05/26 10:15:12 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/06/10 11:15:21 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ typedef struct s_gcll_data
 	t_gcll			*tail;
 }					t_gcll_data;
 
-void				 ft_free(void);
-void    			*ft_malloc(size_t size);
+void				ft_free(void);
+void				*ft_malloc(size_t size);
 void				*ft_add_to_gc(void *ptr);
 
 #endif

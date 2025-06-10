@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:15:43 by apregitz          #+#    #+#             */
-/*   Updated: 2025/05/27 13:14:54 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/06/10 11:20:37 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ int	parsing(int ac, char **av)
 		ft_exit(1);
 	alloc_args(data);
 	is_unique(data);
-	// print_llist(data->stack_a.head);
-	// printf("\n\n\n\n\n");
 	index_llist(data);
 	return (1);
 }

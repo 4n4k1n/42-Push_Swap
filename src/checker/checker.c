@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 10:48:14 by apregitz          #+#    #+#             */
-/*   Updated: 2025/06/07 12:03:15 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/06/10 11:16:09 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	execute_operation(char *str)
 
 int	compare_results(void)
 {
-	t_data 	*data;
+	t_data	*data;
 	t_llist	*llist;
 
 	data = get_data();
@@ -63,7 +63,7 @@ int	compare_results(void)
 
 int	sort_operations(void)
 {
-	char *line;
+	char	*line;
 
 	while (1)
 	{

@@ -6,11 +6,11 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 13:05:17 by hntest2           #+#    #+#             */
-/*   Updated: 2025/05/26 10:22:49 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/06/10 11:22:24 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "gargage_collector.h"
+#include "garbage_collector.h"
 
 static t_gcll_data	*get_gcll_data(void)
 {

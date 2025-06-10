@@ -6,13 +6,13 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 10:16:55 by apregitz          #+#    #+#             */
-/*   Updated: 2025/05/29 10:23:25 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/06/10 11:21:53 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int is_sorted(void)
+int	is_sorted(void)
 {
 	t_data	*data;
 	t_llist	*head;

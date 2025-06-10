@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:13:44 by apregitz          #+#    #+#             */
-/*   Updated: 2025/05/30 11:48:55 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/06/10 11:19:03 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	rra(void)
 
 	data = get_data();
 	if (!data->stack_a.head || !data->stack_a.head->next)
-		return;
+		return ;
 	data->stack_a.head->prev = data->stack_a.tail;
 	data->stack_a.tail->next = data->stack_a.head;
 	data->stack_a.head = data->stack_a.head->prev;
@@ -35,7 +35,7 @@ void	rrb(void)
 
 	data = get_data();
 	if (!data->stack_b.head || !data->stack_b.head->next)
-		return;
+		return ;
 	data->stack_b.head->prev = data->stack_b.tail;
 	data->stack_b.tail->next = data->stack_b.head;
 	data->stack_b.head = data->stack_b.head->prev;

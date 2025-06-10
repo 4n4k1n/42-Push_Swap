@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 16:03:31 by anakin            #+#    #+#             */
-/*   Updated: 2025/06/08 05:56:13 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/06/10 11:22:10 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "printf.h"
 # include "get_next_line_bonus.h"
 # include "extra.h"
-# include "gargage_collector.h"
+# include "garbage_collector.h"
 # include <stdlib.h>
 # include <unistd.h>
 

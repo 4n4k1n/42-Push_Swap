@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 10:09:31 by apregitz          #+#    #+#             */
-/*   Updated: 2025/06/07 10:58:47 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/06/10 11:18:33 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	pa(void)
 
 	data = get_data();
 	if (!data->stack_b.head)
-		return;
+		return ;
 	node = data->stack_b.head;
 	data->stack_b.head = data->stack_b.head->next;
 	if (data->stack_b.head)
@@ -46,7 +46,7 @@ void	pb(void)
 
 	data = get_data();
 	if (!data->stack_a.head)
-		return;
+		return ;
 	node = data->stack_a.head;
 	data->stack_a.head = data->stack_a.head->next;
 	if (data->stack_a.head)

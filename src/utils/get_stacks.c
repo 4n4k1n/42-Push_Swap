@@ -6,7 +6,7 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:16:31 by apregitz          #+#    #+#             */
-/*   Updated: 2025/05/26 10:16:33 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/06/10 11:21:44 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_data	*get_data(void)
 {
-	static t_data data;
+	static t_data	data;
 
 	return (&data);
 }
