@@ -6,14 +6,14 @@
 /*   By: apregitz <apregitz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 05:51:11 by hntest2           #+#    #+#             */
-/*   Updated: 2025/06/10 11:17:44 by apregitz         ###   ########.fr       */
+/*   Updated: 2025/06/10 11:35:07 by apregitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <math.h>
 
-static size_t	get_highest_number(t_data *data, int	*highest)
+static size_t	get_highest_number(t_data *data, int *highest)
 {
 	t_llist	*temp;
 	size_t	i;
